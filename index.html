@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="login">
+        
+        <form id="jsform" onsubmit="event.preventDefault(); save();">
+            <h3 id="heading">LOGIN</h3>
+            <label class="label1" for="name">Name:</label>
+            <input id="name" class="input-class" type="text" name="name">
+            <p id="error1"></p>
+            <label class="label1" for="age">Age:</label>
+            <input id="age" class="input-class" type="number" name="age">
+            <p id="error2"></p>
+            <button id="btn" type="submit">Submit</button>
+        </form>
+        <table border="1">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Age</th>
+                </tr>
+            </thead>
+            <tbody id="table-name">
+            </tbody>
+        </table>
+    
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
