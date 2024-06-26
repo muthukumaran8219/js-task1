@@ -13,11 +13,21 @@ let data = [];
                 errorMessage = 'Name is required!'
                 error1.textContent = errorMessage;
             }
+            
+            else{
+                error1.textContent = '';
+
+            }
 
             if (age === "") {
 
                 errorMessage = 'Age is required!'
                 error2.textContent = errorMessage;
+            }
+            
+            else{
+                error2.textContent = '';
+
             }
 
             if (name === "" || age === "") {
@@ -26,19 +36,22 @@ let data = [];
 
             const entry = { name, age };
             data.push(entry);
-
             document.getElementById('name').value = '';
             document.getElementById('age').value = '';
             console.log(data);
+            updateTable();
         }
         
-        function updateTable() {
-            let tableContent = data.map((item) => {
-                return <tr>
-                <td>${item.name}</td>
-                <td>${item.age}</td>
-                </tr>;
-            }).join('');
-        
-            document.getElementById("table-name").innerHTML = tableContent;
-        }
+        function updateTable(){
+            let v=""
+          data.map((teim) => {
+              v += "<tr>"
+              v += "<td>" + item.name + "</td>"
+              v += "<td>" + item.age + "</td>"
+              v += "</tr>";
+   
+            });
+   
+            document.getElementById("table-name").innerHTML = v;
+          }
+   

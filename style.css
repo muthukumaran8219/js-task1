@@ -45,3 +45,10 @@
     margin-left: 25px;
     color: white;
 }
+table,th,td{
+    border: 1px solid black;
+    margin-left: 43%;
+    margin-top: 5%;
+    padding: 10px;
+    border-collapse: collapse;
+}
