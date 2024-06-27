@@ -14,21 +14,28 @@
         
         <form id="jsform" onsubmit="event.preventDefault(); save();">
             <h3 id="heading">LOGIN</h3>
-            <label class="label1" for="name">Name:</label>
-            <input id="name" class="input-class" type="text" name="name">
-            <p id="error1"></p>
-            <label class="label1" for="age">Age:</label>
-            <input id="age" class="input-class" type="number" name="age">
-            <p id="error2"></p>
+            <div id="div1">
+                 <!-- <label class="label1" for="name"></label> -->
+                 <input id="name" class="input-class" type="text" name="name" placeholder="NAME">
+                 <p id="error1"></p>
+           </div>
+
+            <div id="div2">
+                <!-- <label class="label1" for="age"></label> -->
+                <input id="age" class="input-class" type="number" name="age" placeholder="AGE">
+                <p id="error2"></p>
+            </div>
+           
             <button id="btn" type="submit">Submit</button>
         </form>
     </div>
 
     <table>
-        <thead>
+        <thead id="head">
             <tr>
                 <td>NAME</td>
                 <td>AGE</td>
+                <td>ACTION</td>
             </tr>
         </thead>
         <tbody id="table-name">

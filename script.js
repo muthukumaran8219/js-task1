@@ -1,4 +1,5 @@
 let data = [];
+let editIndex = -1;
 
         function save() {
             const name = document.getElementById('name').value.trim();
@@ -35,7 +36,14 @@ let data = [];
             }
 
             const entry = { name, age };
-            data.push(entry);
+
+            if(editIndex >=0){
+                data[editIndex] = entry;
+                editIndex = -1;
+            }else{
+                data.push(entry);
+            }
+        
             document.getElementById('name').value = '';
             document.getElementById('age').value = '';
             console.log(data);
@@ -44,14 +52,27 @@ let data = [];
         
         function updateTable(){
             let v=""
-          data.map((teim) => {
+          data.forEach((item,index) => {
               v += "<tr>"
               v += "<td>" + item.name + "</td>"
               v += "<td>" + item.age + "</td>"
+              v += '<td><button type="button" class="et" onclick="edit(' + index + ')">Edit</button> <button type="button" class="de" onclick="deleteEntry(' + index + ')">Delete</button></td>';
               v += "</tr>";
    
             });
    
             document.getElementById("table-name").innerHTML = v;
+          }
+
+          function edit(index) {
+            const entry = data[index];
+            document.getElementById('name').value = entry.name;
+            document.getElementById('age').value = entry.age;
+            editIndex = index;
+          }
+        
+          function deleteEntry(index) {
+            data = data.filter((entry, i) => i !==index);
+            updateTable();
           }
    
